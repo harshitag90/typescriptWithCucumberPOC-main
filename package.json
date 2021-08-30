@@ -1,0 +1,32 @@
+{
+  "name": "typescript-withcucumber-poc",
+  "version": "1.0.0",
+  "description": "This Project demonstrates use of Cucumber and Protractor with Typescript for UI Automation",
+  "main": "index.js",
+  "scripts": {
+    "webdriver-update": "./node_modules/.bin/webdriver-manager update",
+    "webdriver-start": "./node_modules/.bin/webdriver-manager start",
+    "protractor": "./node_modules/protractor/built/cli.js",
+    "test": "protractor configuration.js"
+  },
+  "keywords": [],
+  "author": "Harshita",
+  "license": "MIT",
+  "dependencies": {
+    "@types/cucumber-html-reporter": "^5.0.1",
+    "@types/node": "^16.7.5",
+    "chai": "^4.3.4",
+    "chai-as-promised": "^7.1.1",
+    "cucumber-html-reporter": "^5.5.0",
+    "protractor": "^7.0.0",
+    "protractor-cucumber-framework": "^8.2.4",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.4.2"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^7.3.1",
+    "@types/chai": "^4.2.21",
+    "cucumber-pretty": "^6.0.0",
+    "cucumber-tsflow": "^4.0.0-preview.7"
+  }
+}
