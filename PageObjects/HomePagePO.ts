@@ -1,4 +1,4 @@
-const { element, by, ExpectedConditions } = require("protractor");
+var { element, by, ExpectedConditions } = require("protractor");
 
 function HomePagePO()
 {
@@ -6,8 +6,8 @@ function HomePagePO()
     this.passWord= element(by.xpath("//input[@placeholder='Password']"));
     
     this.btnSubmit=element(by.css("button[type='submit']"));
-    this.title=element(by.xpath("//h2[text()='Multi-Factor Authentication']"))
-
+    this.title=element(by.xpath("//h2[text()='Multi-Factor Authentication']"));
+    
 
     this.LoginToApplication=function(username,password)
     {
@@ -16,10 +16,12 @@ function HomePagePO()
         this.btnSubmit.click();
 
     }
+   
     this.VerifyTitle = function()
     {
-         this.title.getText();
-        
+        this.title.getText().then(function (text) {
+            console.log(text);
+          })     
     }
 
 

@@ -29,14 +29,20 @@ var reporter = require('cucumber-html-reporter');
     // }],
 
     //Relative Path to the feature files
-    specs: ['./features/homePage.feature'],
+    //specs: ['./features/homePage.feature'],
+    specs: ['./features/ifirmVersion.feature'],
 
     //Relative path to create step definitions
     cucumberOpts: {
     
+        // require: [
+        //     './PageObjects/HomePagePO.ts',
+        //     './StepDefinitions/HomePageTest.ts',
+        //     './timeout.ts'
+        // ] 
         require: [
-            './PageObjects/HomePagePO.ts',
-            './StepDefinitions/HomePageTest.ts',
+            './PageObjects/CCHIFirmVersionPagePO.ts',
+            './StepDefinitions/IFirmVersionTest.ts',
             './timeout.ts'
         ] 
         , 
@@ -49,7 +55,7 @@ var reporter = require('cucumber-html-reporter');
         browser.manage().window().maximize();               
     },
 
-    onComplete: () => {
+    onComplete: async() => {
     var options = {
         theme: 'bootstrap',
         //jsonFile: 'test/report/cucumber_report.json',
@@ -60,7 +66,7 @@ var reporter = require('cucumber-html-reporter');
         //metadata: {
             "App Version":"2021.30.4",
             "Test Environment": "QCREGRESSIONCA",
-            "Browser": "Chrome  92.0.4515.159",
+            "Browser": "Chrome  94.0.4606.71",
             "Platform": "Windows 10",
             "Parallel": "Scenarios",
             "Executed": "Local"
@@ -68,7 +74,7 @@ var reporter = require('cucumber-html-reporter');
     };
 
     //reporter.generate(options);
-    browser.close();    
+   await browser.close();    
 
     }
 }

@@ -59,12 +59,18 @@ exports.config = {
     // 'browserName': 'chrome'
     // }],
     //Relative Path to the feature files
-    specs: ['./features/homePage.feature'],
+    //specs: ['./features/homePage.feature'],
+    specs: ['./features/ifirmVersion.feature'],
     //Relative path to create step definitions
     cucumberOpts: {
+        // require: [
+        //     './PageObjects/HomePagePO.ts',
+        //     './StepDefinitions/HomePageTest.ts',
+        //     './timeout.ts'
+        // ] 
         require: [
-            './PageObjects/HomePagePO.ts',
-            './StepDefinitions/HomePageTest.ts',
+            './PageObjects/CCHIFirmVersionPagePO.ts',
+            './StepDefinitions/IFirmVersionTest.ts',
             './timeout.ts'
         ],
         tags: '@FunctionalTest'
@@ -76,24 +82,34 @@ exports.config = {
             return [2 /*return*/];
         });
     }); },
-    onComplete: function () {
-        var options = {
-            theme: 'bootstrap',
-            //jsonFile: 'test/report/cucumber_report.json',
-            //output: 'test/report/cucumber_report.html',
-            //reportSuiteAsScenarios: true,
-            //scenarioTimestamp: true,
-            // launchReport: true,
-            //metadata: {
-            "App Version": "2021.30.4",
-            "Test Environment": "QCREGRESSIONCA",
-            "Browser": "Chrome  92.0.4515.159",
-            "Platform": "Windows 10",
-            "Parallel": "Scenarios",
-            "Executed": "Local"
-            // }
-        };
-        //reporter.generate(options);
-        protractor_1.browser.close();
-    }
+    onComplete: function () { return __awaiter(void 0, void 0, void 0, function () {
+        var options;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    options = {
+                        theme: 'bootstrap',
+                        //jsonFile: 'test/report/cucumber_report.json',
+                        //output: 'test/report/cucumber_report.html',
+                        //reportSuiteAsScenarios: true,
+                        //scenarioTimestamp: true,
+                        // launchReport: true,
+                        //metadata: {
+                        "App Version": "2021.30.4",
+                        "Test Environment": "QCREGRESSIONCA",
+                        "Browser": "Chrome  94.0.4606.71",
+                        "Platform": "Windows 10",
+                        "Parallel": "Scenarios",
+                        "Executed": "Local"
+                        // }
+                    };
+                    //reporter.generate(options);
+                    return [4 /*yield*/, protractor_1.browser.close()];
+                case 1:
+                    //reporter.generate(options);
+                    _a.sent();
+                    return [2 /*return*/];
+            }
+        });
+    }); }
 };

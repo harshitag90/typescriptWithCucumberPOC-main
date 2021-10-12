@@ -7,6 +7,6 @@ Feature: Validate IFirm Global MFA Page
                 Then I will validate the MFA title
 
                 Examples:
-                        | username | password       | title     |
-                        | harshi   | P@ssword123    | MFA Title |
+                        | username | password       | title                       |
+                        | harshi   | P@ssword123    | Multi-Factor Authentication |
                    
