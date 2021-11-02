@@ -6,6 +6,7 @@ function HomePagePO()
     this.passWord= element(by.xpath("//input[@placeholder='Password']"));
     
     this.btnSubmit=element(by.css("button[type='submit']"));
+    this.skipBtn=element(by.xpath("//button[@class='btnSecondary']"));
     this.title=element(by.xpath("//h2[text()='Multi-Factor Authentication']"));
     
 
@@ -14,6 +15,12 @@ function HomePagePO()
         this.userName.sendKeys(username);
         this.passWord.sendKeys(password);
         this.btnSubmit.click();
+
+    }
+    this.SkipMFAPage=function()
+    {
+      
+        this.skipBtn.click();
 
     }
    

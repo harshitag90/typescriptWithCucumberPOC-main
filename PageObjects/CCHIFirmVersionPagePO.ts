@@ -10,7 +10,7 @@ function IFirmVersionPagePO()
     this.ClickOnWKImage=function()
     {
         this.wkImg.click();
-        browser.referesh
+       
 
     }
    

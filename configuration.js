@@ -59,19 +59,24 @@ exports.config = {
     // 'browserName': 'chrome'
     // }],
     //Relative Path to the feature files
-    //specs: ['./features/homePage.feature'],
-    specs: ['./features/ifirmVersion.feature'],
+    specs: 
+    //  ['./features/homePage.feature',
+    // './features/ifirmVersion.feature',
+    //  './features/IFirmLeftMenu.feature'],
+    [
+        './features/IFirmLeftMenu.feature'
+    ],
     //Relative path to create step definitions
     cucumberOpts: {
-        // require: [
-        //     './PageObjects/HomePagePO.ts',
-        //     './StepDefinitions/HomePageTest.ts',
-        //     './timeout.ts'
-        // ] 
         require: [
-            './PageObjects/CCHIFirmVersionPagePO.ts',
-            './StepDefinitions/IFirmVersionTest.ts',
-            './timeout.ts'
+            // './PageObjects/EnumClass.ts',
+            './PageObjects/HomePagePO.ts',
+            //   './StepDefinitions/HomePageTest.ts',
+            './PageObjects/IFirmLeftMenuPagePO.ts',
+            './StepDefinitions/IFirmLeftMenuTest.ts',
+            //    './PageObjects/CCHIFirmVersionPagePO.ts',
+            //     './StepDefinitions/IFirmVersionTest.ts',
+            './timeout.ts',
         ],
         tags: '@FunctionalTest'
     },
