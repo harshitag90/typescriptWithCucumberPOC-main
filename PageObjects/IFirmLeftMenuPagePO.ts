@@ -1,9 +1,11 @@
+//import { Console } from "console";
+
 var { element, by, ExpectedConditions } = require("protractor");
 
 function iFirmLeftMenuPagePO()
 {
-    
-    this.leftMenuSection=element(by.xpath("//a[@href='/#/fe/team_directory-view?id=DB']"));
+    this.leftMenuSections=element.all(by.xpath("//ul//div[@class='innerSidebarBox']/a/span"));
+    //this.leftMenuSection=element(by.xpath("//a[@href='/#/fe/team_directory-view?id=DB']"));
     this.pageTitle= element(by.xpath("//h4[@class='pageHeading']"));
   
    
@@ -12,6 +14,16 @@ function iFirmLeftMenuPagePO()
         this.leftMenuSection.click();
     }
    
+    this.ClickOnEachMenu = function()
+    {
+        let tabCount = this.leftMenuSections.count();
+        for (let i = 0; i < tabCount; i++) 
+        {
+           this.leftMenuSections.get(i).click();
+           console.log("tabCount", tabCount);
+         console.log("click successful", i);
+        }
+    }
    
     this.VerifyPageTitle = function()
     {

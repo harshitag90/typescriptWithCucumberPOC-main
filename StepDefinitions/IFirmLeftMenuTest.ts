@@ -29,7 +29,8 @@ When('I will select the menu from Left Menu', async function() {
     await browser.sleep(5000);
     await browser.refresh()
     await browser.sleep(5000);
-    await ifirmleftMenuObj.NavigateToMenuSection()
+    await ifirmleftMenuObj.ClickOnEachMenu()
+  //  await ifirmleftMenuObj.NavigateToMenuSection()
     await browser.sleep(5000);
     await browser.waitForAngular();
       return;
@@ -38,6 +39,8 @@ When('I will select the menu from Left Menu', async function() {
 
 Then('I will validate the title of that particular Page', async function() {
   
+       // await ifirmleftMenuObj.ClickOnEachMenu()
+        
         await ifirmleftMenuObj.VerifyPageTitle()
         await browser.sleep(5000);
         await browser.waitForAngular(); 
